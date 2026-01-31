@@ -146,9 +146,8 @@ body {
     letter-spacing: 1px;
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
+.nav-links img {
+    height: 30px;
 }
 
 .nav-links a {
@@ -157,6 +156,14 @@ body {
     margin-left: 30px;
     font-weight: 500;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
 }
 
 .nav-links a:hover {
@@ -305,6 +312,33 @@ body.light-mode .hero-bg .overlay {
     color: var(--text-gray);
     margin-bottom: 40px;
     max-width: 600px;
+}
+
+/* Page Header for Subpages */
+.page-header {
+    position: relative;
+    padding: 160px 0 100px;
+    text-align: center;
+    background: var(--bg-dark);
+    overflow: hidden;
+}
+
+.page-header .hero-bg {
+    z-index: 1;
+}
+
+.page-header .hero-bg img {
+    opacity: 0.4;
+}
+
+.page-header .hero-bg .overlay {
+    background: linear-gradient(to bottom, var(--header-gradient), var(--bg-dark));
+    z-index: 2;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 3;
 }
 
 /* Animations */
@@ -589,9 +623,9 @@ footer {
     gap: 20px;
 }
 
-.footer-logo {
-    font-size: 1.5rem;
-    font-weight: 800;
+.footer-logo img {
+    height: 40px;
+    margin-bottom: 10px;
 }
 
 .social-links {
@@ -628,25 +662,20 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .nav-links {
         display: none;
-        /* Mobile menu implementation usually requires JS toggle, simplistic here */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100vh;
         background: var(--bg-dark);
         flex-direction: column;
-        padding: 20px;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
+        justify-content: center;
+        padding: 40px;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        z-index: 2000;
     }
 
     .nav-links.active {
@@ -654,12 +683,23 @@ footer {
     }
 
     .nav-links a {
-        margin: 10px 0;
+        margin: 15px 0;
+        font-size: 1.2rem;
     }
 
     .nav-links .btn-primary {
-        margin: 10px 0 0 0;
-        display: inline-block;
+        margin: 20px 0 0 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: block;
+        z-index: 2001;
+    }
+
+    .theme-toggle {
+        margin: 20px auto 0;
     }
 }
 
