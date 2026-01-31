@@ -13,13 +13,15 @@
 }
 
 body.light-mode {
+    --primary-color: #4e44e7;
+    --secondary-color: #008b7d;
     --bg-dark: #f8f9fa;
     --bg-darker: #e9ecef;
-    --header-gradient: rgba(248, 249, 250, 0.9);
-    --text-white: #212529;
-    --text-gray: #495057;
-    --card-bg: rgba(0, 0, 0, 0.05);
-    --glass-border: rgba(0, 0, 0, 0.1);
+    --header-gradient: rgba(248, 249, 250, 0.95);
+    --text-white: #12141d;
+    --text-gray: #2d3436;
+    --card-bg: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.08);
 }
 
 body.cyber-mode {
@@ -91,7 +93,7 @@ body {
 
 .btn-primary {
     background: var(--primary-color);
-    color: var(--text-white);
+    color: #ffffff;
     box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
 }
 
@@ -118,10 +120,16 @@ body {
     top: 0;
     width: 100%;
     padding: 20px 0;
-    background: rgba(15, 17, 26, 0.9);
-    backdrop-filter: blur(10px);
+    background: transparent;
     z-index: 1000;
     transition: var(--transition);
+}
+
+.navbar.scrolled {
+    background: rgba(15, 17, 26, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
 .navbar .container {
@@ -213,9 +221,10 @@ body.cyber-mode .theme-toggle .fa-bolt {
     color: #f7df1e;
 }
 
-body.cyber-mode .navbar {
+body.cyber-mode .navbar.scrolled {
     border-bottom: 2px solid var(--primary-color);
     box-shadow: 0 0 15px var(--primary-color);
+    background: rgba(5, 5, 5, 0.9);
 }
 
 body.cyber-mode .btn-primary {
@@ -228,16 +237,18 @@ body.cyber-mode .service-card:hover {
     box-shadow: 0 0 20px var(--secondary-color);
 }
 
-body.light-mode .navbar {
-    background: rgba(248, 249, 218, 0.9);
+body.light-mode .navbar.scrolled {
+    background: rgba(248, 249, 250, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode .btn-secondary {
-    color: var(--bg-dark);
+    color: var(--primary-color);
 }
 
 body.light-mode .btn-secondary:hover {
     color: var(--primary-color);
+    background: rgba(78, 68, 231, 0.1);
 }
 
 /* Hero Section */
@@ -271,7 +282,11 @@ body.light-mode .btn-secondary:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, var(--bg-dark));
+    background: linear-gradient(to bottom, transparent 20%, var(--bg-dark));
+}
+
+body.light-mode .hero-bg .overlay {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), var(--bg-dark));
 }
 
 .hero-content {
