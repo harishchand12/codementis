@@ -3,17 +3,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle Logic
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
+    const themes = ['dark', 'light', 'cyber'];
 
     // Check for saved theme
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        body.classList.add('light-mode');
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+
+    // Apply initial theme
+    if (currentTheme !== 'dark') {
+        body.classList.remove('light-mode', 'cyber-mode');
+        if (currentTheme === 'light') body.classList.add('light-mode');
+        if (currentTheme === 'cyber') body.classList.add('cyber-mode');
     }
 
     themeToggle.addEventListener('click', () => {
-        body.classList.toggle('light-mode');
-        const isLight = body.classList.contains('light-mode');
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        // Cycle through themes
+        let nextIndex = (themes.indexOf(currentTheme) + 1) % themes.length;
+        currentTheme = themes[nextIndex];
+
+        // Update body classes
+        body.classList.remove('light-mode', 'cyber-mode');
+        if (currentTheme === 'light') body.classList.add('light-mode');
+        if (currentTheme === 'cyber') body.classList.add('cyber-mode');
+
+        localStorage.setItem('theme', currentTheme);
     });
 
     // Mobile Navigation Toggle
