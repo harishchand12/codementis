@@ -1,9 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check for saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        const isLight = body.classList.contains('light-mode');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
-    
+
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         // Animate hamburger to X (optional enhancement)
@@ -41,16 +57,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3D Tilt Effect for Service Cards
     const cards = document.querySelectorAll('.service-card');
-    
+
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
+
             const rotateX = ((y - centerY) / centerY) * -5; // Max rotation deg
             const rotateY = ((x - centerX) / centerX) * 5;
 
@@ -79,15 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial check for fade-in elements not already handled by CSS animation
     // Adding a generic fade-in class for other sections
     const fadeElements = document.querySelectorAll('.section-header, .about-content, .contact-wrapper, .service-card, .project-card');
-    
+
     // Add CSS for these dynamically or ensure style.css handles .visible
     // Here we inject a quick style rule for .fade-on-scroll if not present, but better to rely on CSS.
     // Let's manually add opacity: 0 to these via JS initially to avoid FOUC if JS fails,
     // or just assume style.css handles standard animations.
-    
+
     // For this simple implementation, let's just use the hover effects and the hero animation.
     // We can add a simple slide-up class locally.
-    
+
     fadeElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
