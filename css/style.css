@@ -22,6 +22,18 @@ body.light-mode {
     --glass-border: rgba(0, 0, 0, 0.1);
 }
 
+body.cyber-mode {
+    --primary-color: #ff00ff;
+    --secondary-color: #00ffff;
+    --bg-dark: #050505;
+    --bg-darker: #000000;
+    --header-gradient: rgba(5, 5, 5, 0.9);
+    --text-white: #00ffff;
+    --text-gray: #ff00ff;
+    --card-bg: rgba(255, 0, 255, 0.05);
+    --glass-border: rgba(0, 255, 255, 0.2);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -177,16 +189,43 @@ body {
     background: rgba(108, 99, 255, 0.1);
 }
 
-.theme-toggle .fa-sun {
+.theme-toggle .fa-sun,
+.theme-toggle .fa-bolt {
     display: none;
 }
 
-body.light-mode .theme-toggle .fa-moon {
+body.light-mode .theme-toggle .fa-moon,
+body.light-mode .theme-toggle .fa-bolt {
     display: none;
 }
 
 body.light-mode .theme-toggle .fa-sun {
     display: inline-block;
+}
+
+body.cyber-mode .theme-toggle .fa-moon,
+body.cyber-mode .theme-toggle .fa-sun {
+    display: none;
+}
+
+body.cyber-mode .theme-toggle .fa-bolt {
+    display: inline-block;
+    color: #f7df1e;
+}
+
+body.cyber-mode .navbar {
+    border-bottom: 2px solid var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+body.cyber-mode .btn-primary {
+    box-shadow: 0 0 15px var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+body.cyber-mode .service-card:hover {
+    box-shadow: 0 0 20px var(--secondary-color);
 }
 
 body.light-mode .navbar {
