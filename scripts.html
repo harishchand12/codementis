@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Scripts | CodeMentis</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific styles for scripts page */
+        .page-header {
+            padding: 150px 0 80px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(15, 17, 26, 0.9), var(--bg-dark));
+        }
+
+        .script-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .script-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .script-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .script-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .script-price {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 15px 0 25px;
+            color: var(--text-gray);
+            flex-grow: 1;
+        }
+
+        .features-list li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .features-list li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .buy-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-full {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">CodeMentis<span class="dot">.</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="showcase.html">Showcase</a>
+                <a href="scripts.html" class="active" style="color: var(--primary-color);">Buy Scripts</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact" class="btn-primary">Get in Touch</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="hero-title">Premium <span class="gradient-text">Scripts</span></h1>
+            <p class="hero-subtitle" style="margin: 0 auto;">Accelerate your business with our ready-made, high-quality
+                software solutions.</p>
+        </div>
+    </header>
+
+    <!-- Scripts Grid -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="services-grid"> <!-- Reusing grid layout -->
+
+                <!-- Script 1 -->
+                <div class="script-card">
+                    <img src="images/script-ecommerce.png" alt="E-commerce Solution" class="script-img">
+                    <div class="script-content">
+                        <h3>E-Commerce Ultimate</h3>
+                        <div class="script-price">$499</div>
+                        <p>A complete multi-vendor e-commerce platform with a dashboard, analytics, and mobile app
+                            ready.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Multi-vendor Support</li>
+                            <li><i class="fas fa-check"></i> Stripe & PayPal Integrated</li>
+                            <li><i class="fas fa-check"></i> React Native App Included</li>
+                            <li><i class="fas fa-check"></i> Admin Dashboard</li>
+                        </ul>
+                        <div class="buy-actions">
+                            <a href="#" class="btn-primary btn-full">Buy Now</a>
+                            <a href="#" class="btn-secondary btn-full">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Script 2 -->
+                <div class="script-card">
+                    <img src="images/script-food.png" alt="Food Delivery Script" class="script-img">
+                    <div class="script-content">
+                        <h3>FoodDelivery Pro</h3>
+                        <div class="script-price">$399</div>
+                        <p>UberEats clone with real-time tracking, rider apps, and restaurant management panel.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Live GPS Tracking</li>
+                            <li><i class="fas fa-check"></i> Rider & Restaurant Apps</li>
+                            <li><i class="fas fa-check"></i> Order Management</li>
+                            <li><i class="fas fa-check"></i> Push Notifications</li>
+                        </ul>
+                        <div class="buy-actions">
+                            <a href="#" class="btn-primary btn-full">Buy Now</a>
+                            <a href="#" class="btn-secondary btn-full">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Script 3 -->
+                <div class="script-card">
+                    <img src="images/script-crm.png" alt="CRM Solution" class="script-img">
+                    <div class="script-content">
+                        <h3>Nexus CRM</h3>
+                        <div class="script-price">$599</div>
+                        <p>Enterprise-grade CRM to manage leads, customers, and projects efficiently.</p>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> Lead Management</li>
+                            <li><i class="fas fa-check"></i> Kanban Project Boards</li>
+                            <li><i class="fas fa-check"></i> Email Integration</li>
+                            <li><i class="fas fa-check"></i> Automated Reporting</li>
+                        </ul>
+                        <div class="buy-actions">
+                            <a href="#" class="btn-primary btn-full">Buy Now</a>
+                            <a href="#" class="btn-secondary btn-full">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">CodeMentis<span class="dot">.</span></div>
+            <p>&copy; 2026 CodeMentis Agency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/917292030603" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
